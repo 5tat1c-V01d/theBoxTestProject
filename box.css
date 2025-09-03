@@ -1,0 +1,131 @@
+#container {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+#topBar {
+  background-color: #222;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  text-decoration: underline;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  padding: 10px;
+  row-gap: 20px;
+  column-gap: 50px;
+
+}
+
+.blackBackground {
+  height: 245px;
+  width: 280px;
+  background-color: black;
+  display: flex;
+  position:relative;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ------------------------------------------------ */
+
+.cross:before, .cross:after {
+    content:'';
+    position:absolute;
+    width: 275px;
+    height:35px;
+    background-color:white;
+    border-radius:2px;
+    top:109px;
+    box-shadow:0 0 2px 0 #ccc;
+}
+
+.cross:before{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+    left:2px;
+}
+
+.cross:after{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    right:2px;
+}
+/* ------------------------------------------------ */
+
+.naughtOuter{
+
+  height: 228px;
+  width: 228px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  position:relative;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.naughtInner {
+
+  height: 175px;
+  width: 175px;
+  background-color: black;
+  border-radius: 50%;
+  
+}
+
+#rightSide {
+  float: right;
+  
+}
+
+.cross.win:before,
+.cross.win:after {
+    background-color: limegreen; 
+}
+
+.naughtOuter.win {
+  background-color: limegreen !important;
+  border-color: limegreen !important;
+  box-shadow: 0 0 6px 2px limegreen;
+  transition: all 0.4s ease;
+}
+
+@keyframes flash-error {
+  0%   { background-color: #ff4d4d; }
+  50%  { background-color: #ffcccc; }
+  100% { background-color: inherit; }
+}
+
+.cross.flash-error:before,
+.cross.flash-error:after {
+  animation: flash-error 0.5s ease-in-out;
+}
+
+.naughtOuter.flash-error
+{
+  animation: flash-error 0.5s ease-in-out;
+}
+
