@@ -1,6 +1,5 @@
 // MVC done?
 //Move on to functionality,
-// Make a control pannel at the top
 // - unit testing
 // - AI logic to play against 
 // - Touch support (media query)
@@ -11,7 +10,6 @@
 // Clearly explain:
 //  MVC decisions
 //  How AI works
-// What’s unit tested
 // Even a dev who doesn’t read JS should grasp what’s going on.
 
 import { Game } from './model.js';

@@ -39,8 +39,6 @@ export class Game {
 	changeTurn(){
 		this.activePlayer = (this.activePlayer === "Crosses") ? "Naughts" : "Crosses";
 	}
-
-
 }
 
 class Space{
@@ -65,6 +63,7 @@ class Board{
 	constructor(){
 		this.spaces = [];
 		this.winningLine = [];
+		this.full = false;
 	}
 } 
 
