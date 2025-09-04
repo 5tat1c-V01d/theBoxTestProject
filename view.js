@@ -55,6 +55,13 @@ export const view = {
 
 		
 	},
+	updateDrawStateOnScreen: (board) => {
+		board.forEach((space) => {
+			document.getElementById(`spaceForeground${space.spaceId}`).classList.add("draw");
+		})
+		view.playErrorNoise();
+		
+	},
 	drawPlayerOnBoard: (activePlayer, spaceId) => {
 		if (activePlayer === "Crosses") {
 			view.addCross(spaceId);

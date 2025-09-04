@@ -5,6 +5,7 @@ export class Game {
 		this.activePlayer = "Crosses";
 		this.state = "In Progress";
 		this.board = "";
+		this.numOfMovesPlayed = 0;
 	}
 
 	initialiseGame() {
@@ -16,6 +17,10 @@ export class Game {
 		}
 		makeXYCoords(this.board);
 		return this.board;	
+	}
+
+	moveMade(){
+		this.numOfMovesPlayed++;
 	}
 
 	checkWin(spaceId, activePlayer, board) {
@@ -63,7 +68,7 @@ class Board{
 	constructor(){
 		this.spaces = [];
 		this.winningLine = [];
-		this.full = false;
+		//this.full = false;
 	}
 } 
 

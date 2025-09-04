@@ -38,7 +38,8 @@ class GameController{
 
 	handleSpaceClick(spaceId){
 		
-		if(this.model.state !== "In Progress"){
+		if(this.model.state !== "In Progress" || this.model.state === "Draw"){
+			//Dont Register the click
 			return;
 		}
 
@@ -58,6 +59,8 @@ class GameController{
 			}
 			//Draw player on board
 			view.drawPlayerOnBoard(activePlayer, spaceId)
+			//Inform game to count a move being made
+			this.model.moveMade();
 			
 			this.checkGameStatus(spaceId, this.model.activePlayer);
 	
@@ -72,6 +75,11 @@ class GameController{
 			this.model.state = `${activePlayer} Win`;
 			view.updateWinStateOnScreen(this.model.board.winningLine);
 			view.playWinDing();
+		}
+
+		else if(this.model.numOfMovesPlayed === 9){
+			this.model.state = "Draw";
+			view.updateDrawStateOnScreen(this.model.board.spaces);
 		}
 	}
 

@@ -116,6 +116,19 @@ html, body {
   animation: flash-error 0.5s ease-in-out;
 }
 
+/* Draw */
+.cross.draw:before,
+.cross.draw:after {
+  background-color: rgb(205, 50, 50);
+}
+
+.naughtOuter.draw {
+  background-color: rgb(205, 50, 50) !important;
+  box-shadow: 0 0 6px 2px rgb(205, 50, 50);
+  transition: all 0.4s ease;
+}
+
+
 /* Responsive for mobile */
 @media (max-width: 500px) {
   #topBar {
