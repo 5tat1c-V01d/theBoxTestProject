@@ -141,7 +141,7 @@ html, body {
   }
 }
 
-#restartButton {
+#restartButton, #gameTypeSelection,#currentState {
   background-color: black;
   color: white;
   border: 0.2rem solid white;
@@ -154,7 +154,7 @@ html, body {
   transition: all 0.3s ease;
   border-radius: 0.5rem;
 
-  /* ✅ Center horizontally */
+  /*Center horizontally */
   display: block;
   margin: 0vh auto 0 auto; /* Top spacing & auto centering */
   width: fit-content;
@@ -173,8 +173,11 @@ html, body {
   opacity: 0.9;
 }
 
-/* Optional: subtle shadow */
+/* subtle shadow */
 #restartButton {
   box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }
+
+
+
 

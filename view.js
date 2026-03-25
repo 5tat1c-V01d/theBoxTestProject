@@ -1,10 +1,16 @@
 "use strict";
 
 export const view = {
-	bindButtons:()=>{
+	bindButtons: () => {
 		let restartButton = document.getElementById("restartButton");
+		let selectBox = document.getElementById("gameTypeSelection")
 		restartButton.addEventListener('click', () =>{
 			view.buttonClicked();
+		})
+
+		selectBox.addEventListener('change', () =>{
+			const selectedValue = selectBox.value; //which player slected
+			view.gameSelected(selectedValue);
 		})
 	},
 	renderBoard: (board) => {
@@ -62,6 +68,9 @@ export const view = {
 		view.playErrorNoise();
 		
 	},
+	// updateStateToUser: () =>{
+	// 	//currentState
+	// },
 	drawPlayerOnBoard: (activePlayer, spaceId) => {
 		if (activePlayer === "Crosses") {
 			view.addCross(spaceId);

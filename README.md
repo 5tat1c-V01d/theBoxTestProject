@@ -2,6 +2,11 @@
 
 A Responsive, browser-based Naughts and Crosses game built using vanilla JavaScript, CSS Grid/Flexbox, and the MVC (Model-View-Controller) architecture. Includes animations, and dynamic sound using the Tone.js audio library.
 
+## Disclosure
+- ChatGBT was used to help write this README. I also used ChatGBT as a learning tool with the promt: 
+"We have been role playing, you are acting as a senior dev who is helping me learn, by never giving me specific code snippets (unless i ask specifically for code) but guiding me through with questions."
+- All design and logic descisons were made by me. ChatGBT was mostly used to help me learn the syntax of JS coming from a mostly C# background, also for rubber ducking or to help refactor snippets of code. Its been a useful tool to learn both its benefits and drawbacks. 
+
 ---
 
 ## 🚀 Features
