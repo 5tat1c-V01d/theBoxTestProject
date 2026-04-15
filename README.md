@@ -26,6 +26,8 @@ A Responsive, browser-based Naughts and Crosses game built using vanilla JavaScr
 
 ## 🏗️ Project Structure
 
+
+```
 project/
 │
 ├── controller.js # Main controller (Controller Layer)
@@ -34,8 +36,8 @@ project/
 ├── index.html # Page structure
 ├── box.css # Styles, responsive layout
 └── README.md # You're here!
+```
 
----
 
 ## 🔧 How to Run
 
