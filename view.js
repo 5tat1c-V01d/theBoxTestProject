@@ -3,11 +3,11 @@
 export const view = {
 	bindButtons: () => {
 		let restartButton = document.getElementById("restartButton");
-		let selectBox = document.getElementById("gameTypeSelection")
 		restartButton.addEventListener('click', () =>{
 			view.buttonClicked();
 		})
 
+		let selectBox = document.getElementById("gameTypeSelection");
 		selectBox.addEventListener('change', () =>{
 			const selectedValue = selectBox.value; //which player slected
 			view.gameSelected(selectedValue);

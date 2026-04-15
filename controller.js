@@ -31,18 +31,18 @@ class GameController{
 		view.buttonClicked = this.resetGame.bind(this); //Link event handlers to function
 
 		view.gameSelected = this.selectGameType.bind(this);
-		let game = new Game();  // instantiate Game
-		//^^^ should this be const
-		game.initialiseGame(); //This method instantiates Board
+		this.model = new Game();  // instantiate Game
+	
+		this.model.initialiseGame(); //This method instantiates Board
+		
+		this.model.setGameTypeModel("sausage");// Get this working
 
-		//game.setGameType();// This has nothing passed to it yet or binded to it
-
-		view.renderBoard(game.board); // render UI 
+		view.renderBoard(this.model.board); // render UI 
 		view.clickRegistered = this.handleSpaceClick.bind(this); //Assigns call back function in to views scope
-		this.model = game; // this can maybe be removed and put in place of let game
+		
 	}
-		//async 
-		handleSpaceClick(userClickedSpaceId){
+	//async 
+	handleSpaceClick(userClickedSpaceId){
 		
 		if(this.model.state !== "In Progress" || this.model.state === "Draw"){
 			//Dont Register the click
@@ -98,17 +98,9 @@ class GameController{
 		}
 	}
 
-	// async computerMove(){
-	// 	let computersSpaceChoice = await this.model.computerSelectSpace(this.model.board.spaces);
-
-	// 	computersSpaceChoice.takeSpace(this.model.activePlayer);
-
-	// 	return computersSpaceChoice;
-	// }
-
 	selectGameType(typeSelected)
 	{	//This method should be within game.
-		this.model.gameType = typeSelected;
+		this.model.setGameType(typeSelected);
 	}
 
 	resetGame(){
@@ -120,3 +112,12 @@ class GameController{
 		this.init();
 	}
 }
+
+	// async computerMove(){
+	// 	let computersSpaceChoice = await this.model.computerSelectSpace(this.model.board.spaces);
+
+	// 	computersSpaceChoice.takeSpace(this.model.activePlayer);
+
+	// 	return computersSpaceChoice;
+	// }
+
