@@ -31,11 +31,13 @@ A Responsive, browser-based Naughts and Crosses game built using vanilla JavaScr
 project/
 │
 ├── controller.js # Main controller (Controller Layer)
-├── model.js # Game logic, win conditions (Model Layer)
-├── view.js # UI rendering, DOM interaction, sounds (View Layer)
-├── index.html # Page structure
-├── box.css # Styles, responsive layout
-└── README.md # You're here!
+├── model.js      # Game logic, win conditions (Model Layer)
+├── view.js       # UI rendering, DOM interaction, sounds (View Layer)
+├── board.js      # Board + Space classes (data structure)
+├── gameRules.js  # Pure game logic (check wins)
+├── index.html    # Page structure
+├── box.css       # Styles, responsive layout
+└── README.md     # You're here!
 ```
 
 
@@ -74,8 +76,7 @@ http-server
 ### 🎯 MVC Architecture
 
 **Model (`model.js`)**  
-- Manages game data: `Game`, `Board`, `Space`  
-- Handles win logic (vertical, horizontal, diagonal)  
+- Manages game data: `Game`, `Board`, `Space`    
 - Tracks current player & board state  
 
 **View (`view.js`)**  
@@ -144,7 +145,5 @@ AI logic would be implemented inside the `GameController`:
 Code is written in ES6 modules
 
 Game logic is separated cleanly from DOM manipulation
-
-AI and persistence are modular, easily expandable
 
 Every function is logically grouped and scoped
